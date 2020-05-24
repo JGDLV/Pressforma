@@ -185,6 +185,13 @@ input[type="submit"] {
   opacity: 0;
 }
 
+#top.active {
+  -webkit-transform: none;
+      -ms-transform: none;
+          transform: none;
+  opacity: 1;
+}
+
 .modal-popup-block {
   background: #FFF;
   max-width: 600px;
@@ -2160,13 +2167,6 @@ h2 {
 }
 
 #top:hover::after {
-  opacity: 1;
-}
-
-#top.active {
-  -webkit-transform: none;
-      -ms-transform: none;
-          transform: none;
   opacity: 1;
 }
 
