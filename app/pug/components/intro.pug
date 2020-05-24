@@ -1,0 +1,29 @@
+-
+  var intro = {
+    header: 'Изготовление пресс-форм <br>для литья пластмасс и&nbsp;резины',
+    subheader: 'С&nbsp;точностью до&nbsp;0,01&nbsp;мм',
+    form: {
+      header: 'Оставьте заявку&nbsp;&mdash; рассчитаем стоимость за&nbsp;1-3 дня',
+      name: 'Ваше имя',
+      phone: 'Ваш телефон *',
+      comment: 'Пожелания к пресс-форме',
+      file: 'Добавить файл',
+      submit: 'Отправить заявку'
+    }
+  }
+
+.intro#intro
+  .container
+    h1.intro__header !{intro.header}
+    p.intro__subheader !{intro.subheader}
+    form.intro-form
+      p.intro-form__header !{intro.form.header}
+      .intro-form__inner
+        input.intro-form__name(type='text' placeholder=intro.form.name)
+        input.intro-form__phone(type='text' placeholder=intro.form.phone name='phone' required)
+        textarea.intro-form__comment(placeholder=intro.form.comment)
+        label.intro-form__file
+          input(type='file')
+          span !{intro.form.file}
+        button.intro-form__submit(type='submit')
+          span !{intro.form.submit}

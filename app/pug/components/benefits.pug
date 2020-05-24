@@ -1,0 +1,45 @@
+-
+  var benefits = {
+    header: 'Уменьшите расходы на&nbsp;производство до&nbsp;35%: <br>закажите высокоточные пресс-формы',
+    subheader: 'Максимальная ширина изделия&nbsp;&mdash; 600&nbsp;мм, длина&nbsp;&mdash; 1&nbsp;000&nbsp;мм',
+    items: [
+      {
+        image: 'img/benefits-01.svg',
+        header: 'Оптимальное решение',
+        text: 'Получите современную ремонтопригодную пресс-форму по&nbsp;минимальной цене&nbsp;&mdash; бесплатно проанализируем ваши чертежи и&nbsp;адаптируем их&nbsp;к&nbsp;актуальным стандартам. В&nbsp;штате компании профессионалы с&nbsp;10-летним стажем, опыт главного технолога&nbsp;&mdash; 15&nbsp;лет',
+      },
+      {
+        image: 'img/benefits-02.svg',
+        header: 'Европейские материалы',
+        text: 'Будьте уверены&nbsp;&mdash; заказанная пресс-форма выдержит заявленное количество производственных циклов. Закупаем сырье и&nbsp;комплектующие для изготовления продукции у&nbsp;проверенных европейских поставщиков, с&nbsp;которыми работаем дольше 6&nbsp;лет: FCPK и&nbsp;FODESKO',
+      },
+      {
+        image: 'img/benefits-03.svg',
+        header: 'Надежное оборудование',
+        text: 'Выпускайте безупречную продукцию&nbsp;&mdash; точность наших пресс-форм достигает 0,01&nbsp;мм. Для этого используем надежное немецкое оборудование производителя DMGMOR: фрезерные обрабатывающие центры с&nbsp;ЧПУ DMF 180, DMC 850V и&nbsp;DMC 1035 ecoline',
+      },
+      {
+        image: 'img/benefits-04.svg',
+        header: 'Безопасное сотрудничество',
+        text: 'Планируйте свое производство&nbsp;&mdash; изготовим пресс-формы для резины и&nbsp;пластмасс точно в&nbsp;срок. Укажем условия сотрудничества в&nbsp;договоре&nbsp;&mdash; время и&nbsp;стоимость выполнения заказа, гарантийные обязательства, выпуск тестового изделия и&nbsp;т.&nbsp;д.',
+      },
+      {
+        image: 'img/benefits-05.svg',
+        header: 'Удобная логистика',
+        text: 'Выберите устраивающий вас вариант доставки&nbsp;&mdash; поможем решить любые вопросы логистики. Работаем по&nbsp;России, странам ближнего и&nbsp;дальнего зарубежья&nbsp;&mdash; отправляем заказы через транспортные компании &laquo;Деловые линии&raquo;, СДЭК и&nbsp;ПЭК',
+      },
+    ]
+  }
+
+.benefits#benefits
+  .container
+    h2.benefits__header !{benefits.header}
+    p.benefits__subheader !{benefits.subheader}
+    .benefits-items
+      each item in benefits.items
+        .benefits__item
+          .benefits__item-image-part
+            img.benefits__item-image(src=item.image, alt='')
+          .benefits__item-text-part
+            p.benefits__item-header !{item.header}
+            p.benefits__item-text !{item.text}

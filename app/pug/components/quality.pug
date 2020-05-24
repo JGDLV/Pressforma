@@ -1,0 +1,36 @@
+-
+  var qualityLink01 = '<a href="#">Сертификат соответствия</a>'
+  var qualityLink02 = '<a href="#">разрешение на&nbsp;применение</a>'
+
+  var quality = {
+    header: 'Безупречное качество: изготавливаем литьевые пресс-формы <br>в&nbsp;собственном цеху и&nbsp;под контролем главного технолога',
+    subheader: ''+qualityLink01+' и '+qualityLink02+' знака соответствия',
+    items: [
+      {
+        link: 'img/quality-01.png',
+        image: 'img/quality-01.png'
+      },
+      {
+        link: 'img/quality-02.png',
+        image: 'img/quality-02.png'
+      },
+      {
+        link: 'img/quality-01.png',
+        image: 'img/quality-01.png'
+      },
+      {
+        link: 'img/quality-02.png',
+        image: 'img/quality-02.png'
+      },
+    ]
+  }
+
+.quality#quality
+  .container
+    h2.quality__header !{quality.header}
+    p.quality__subheader !{quality.subheader}
+    .quality-items.owl-carousel
+      each item in quality.items
+        .quality__item
+          a(href=item.image).quality__item-link
+            img.quality__item-image(src=item.image, alt='')

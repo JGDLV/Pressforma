@@ -1,0 +1,55 @@
+-
+
+  var link01 = '<a href="#">пресс-форм для литья пластмасс</a>';
+  var link02 = '<a href="#">резинотехнических изделий</a>';
+
+  var directions = {
+    header: 'Направления работы',
+    items: [
+      {
+        image: 'img/directions-01.png',
+        title: 'Изготовление '+link01+' и '+link02+'',
+        header: 'Цена пресс-формы&nbsp;&mdash; от&nbsp;62&nbsp;000 рублей',
+        textTop: 'Сумма зависит&nbsp;от:',
+        list: [
+          '<b>способа прессования</b>&nbsp;&mdash; для прямого стоит меньше, чем для литьевого;',
+          '<b>количества плит</b>&nbsp;&mdash; двухплитные проще в&nbsp;изготовлении и&nbsp;дешевле;',
+          '<b>типа литниковой системы</b>&nbsp;&mdash; холодноканальные доступнее горячеканальных;',
+          '<b>запаса прочности</b>&nbsp;&mdash; класс 105 рассчитан на&nbsp;500 изделий и&nbsp;демократичнее по&nbsp;цене класса 101, который выдержит до&nbsp;1&nbsp;000&nbsp;000 циклов;',
+          '<b>уровня автоматизации</b>&nbsp;&mdash; ручные ниже по&nbsp;стоимости полуавтоматов и&nbsp;автоматических.'
+        ],
+        textBottom: 'Поэтому мы&nbsp;рассчитываем стоимость изготовления пресс-форм индивидуально для каждого заказа: оставьте заявку, подготовим точную смету и&nbsp;коммерческое предложение в&nbsp;течение 3&nbsp;дней.'
+      },
+      {
+        image: 'img/directions-02.png',
+        title: 'Литье пластмасс и&nbsp;резинотехнических изделий на&nbsp;заказ',
+        header: 'Срок изготовления пресс-форм&nbsp;&mdash; <br>от&nbsp;14&nbsp;рабочих дней',
+        textTop: 'На&nbsp;длительность влияет:',
+        list: [
+          '<b>наличие материала</b> на&nbsp;наших складах в&nbsp;Санкт-Петербурге;',
+          '<b>сложность пресс-формы</b>&nbsp;&mdash; тип конструкции, гнездность, количество плоскостей разъема и&nbsp;другие технические нюансы;',
+          '<b>скорость согласования нюансов</b>&nbsp;&mdash; насколько оперативно вы&nbsp;будете отвечать на&nbsp;возникающие вопросы по&nbsp;конструктивной документации.'
+        ],
+        textBottom: 'Из-за этого время изготовления пресс-форм может варьироваться от&nbsp;2&nbsp;недель до&nbsp;3&nbsp;месяцев. Вы&nbsp;получите заказ без опозданий по&nbsp;нашей вине&nbsp;&mdash; перед началом работ сориентируем вас по&nbsp;срокам и&nbsp;укажем их&nbsp;в&nbsp;договоре.'
+      },
+    ],
+
+  }
+
+.directions#directions
+  .container
+    h2.directions__header !{directions.header}
+    .directions-items
+      each item in directions.items
+        .directions__item
+          .directions__item-image-part
+            img.directions__item-image(src=item.image, alt='')
+            p.directions__item-title !{item.title}
+          .directions__item-text-part
+            p.directions__item-header !{item.header}
+            p.directions__item-text.directions__item-text_top !{item.textTop}
+            .directions__item-inner
+              ul.directions__item-list
+                each li in item.list
+                  li !{li}
+              p.directions__item-text.directions__item-text_bottom !{item.textBottom}

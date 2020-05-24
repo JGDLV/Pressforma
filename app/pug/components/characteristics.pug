@@ -1,0 +1,43 @@
+-
+  var characteristics = {
+    header: 'Пресс-форма будет соответствовать <br>заявленным характеристикам',
+    items: [
+      {
+        image: 'img/characteristics-01.svg',
+        header: 'Подготовим<br>Тех. Задание',
+        text: 'Обсудим с&nbsp;вами детали, чтобы выбрать оптимальный тип пресс-формы под производство. Согласуем&nbsp;ТЗ, оформим договор',
+      },
+      {
+        image: 'img/characteristics-02.svg',
+        header: 'Разработаем<br>3D-модели',
+        text: 'В&nbsp;течение 1&nbsp;недели отправим вам объемные модели пресс-формы и&nbsp;изделий. Если нужно&nbsp;&mdash; внесем корректировки',
+      },
+      {
+        image: 'img/characteristics-03.svg',
+        header: 'Создадим<br>пресс-форму',
+        text: 'Изготовим и&nbsp;закалим форму в&nbsp;собственном цеху: все процессы контролирует главный технолог',
+      },
+      {
+        image: 'img/characteristics-04.svg',
+        header: 'Организуем<br>тестирование',
+        text: 'Проведем пробную отливку, чтобы проверить точность и&nbsp;соответствие указанным в&nbsp;техзадании параметрам',
+      },
+      {
+        image: 'img/characteristics-05.svg',
+        header: 'Доработаем<br>детали',
+        text: 'При необходимости устраним выявленные недочеты и&nbsp;выполним требующуюся инструментальную обработку',
+      },
+    ]
+  }
+
+.characteristics#characteristics
+  .container
+    h2.characteristics__header !{characteristics.header}
+    .characteristics-items
+      each item in characteristics.items
+        .characteristics__item
+          .characteristics__item-image-part
+            img.characteristics__item-image(src=item.image, alt='')
+          .characteristics__item-text-part
+            p.characteristics__item-header !{item.header}
+            p.characteristics__item-text !{item.text}

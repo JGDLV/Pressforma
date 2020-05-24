@@ -1,0 +1,30 @@
+-
+  var header = {
+    logoLink: '/',
+    logoImage: 'img/logo.png',
+    tagline: 'Производство пресс-форм <br>для пластмассовых <br>и&nbsp;резинотехнических изделий',
+    deliveryImage: 'img/delivery.svg',
+    deliveryText: 'Доставка по&nbsp;всей России',
+    phone: '8 (812) 336-43-89',
+    whours: 'пн-сб с&nbsp;09:00 до&nbsp;18:00',
+    email: 'zakaz@pressforma.online'
+  }
+
+  var phoneFix = (a) => {
+    return a.split('').map(item => item.replace(/[ ()-]/g, '')).join('')
+  }
+
+.container
+  .header__inner
+    .logo
+      a.logo__link(href=header.logoLink)
+        img.logo__image(src=header.logoImage, alt='')
+    p.tagline !{header.tagline}
+    .delivery
+      .delivery__image-part
+        img.delivery__image(src=header.deliveryImage, alt="")
+      p.delivery__text !{header.deliveryText}
+    .header__contacts
+      a.header__contacts-phone(href='tel:' + phoneFix(header.phone)) !{header.phone}
+      p.header__contacts-whours !{header.whours}
+      a.header__contacts-email(href='mailto:' + header.email) !{header.email}

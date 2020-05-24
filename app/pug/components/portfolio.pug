@@ -1,0 +1,93 @@
+-
+  var portfolio = {
+    header: 'Оцените уровень пресс-форм: <br>посмотрите реализованные проекты',
+    items: [
+      {
+        images: [ 'img/portfolio-01.png', 'img/portfolio-02.png' ],
+        header: 'Пресс-форма для (?) из&nbsp;АБС и&nbsp;полиамида PA-10',
+        textTop: 'Состоит из&nbsp;2&nbsp;половин. Форма с&nbsp;2&nbsp;гидроцилиндрами и&nbsp;2&nbsp;шиберами для оформления скрытых полостей и&nbsp;отверстий в&nbsp;боковых стенках. Твердость 46-48&nbsp;HRC, рассчитана на&nbsp;500&nbsp;000 смыканий.',
+        options: [
+          { name: 'Цена', value: '670&nbsp;000&nbsp;руб.&nbsp;с&nbsp;НДС' },
+          { name: 'Срок изготовления', value: '32&nbsp;дня' },
+          { name: 'Габариты', value: '246&times;218&times;234&nbsp;мм' },
+          { name: 'Вес', value: '100&nbsp;кг' },
+        ],
+        textBottom: 'Материал формообразующих элементов на обеих пресс-формах — сталь 1.2312',
+      },
+      {
+        images: [ 'img/portfolio-01.png', 'img/portfolio-02.png' ],
+        header: 'Пресс-форма для (?) из&nbsp;АБС и&nbsp;полиамида PA-10',
+        textTop: 'Состоит из&nbsp;2&nbsp;половин. Форма с&nbsp;2&nbsp;гидроцилиндрами и&nbsp;2&nbsp;шиберами для оформления скрытых полостей и&nbsp;отверстий в&nbsp;боковых стенках. Твердость 46-48&nbsp;HRC, рассчитана на&nbsp;500&nbsp;000 смыканий.',
+        options: [
+          { name: 'Цена', value: '670&nbsp;000&nbsp;руб.&nbsp;с&nbsp;НДС' },
+          { name: 'Срок изготовления', value: '32&nbsp;дня' },
+          { name: 'Габариты', value: '246&times;218&times;234&nbsp;мм' },
+          { name: 'Вес', value: '100&nbsp;кг' },
+        ],
+        textBottom: 'Материал формообразующих элементов на обеих пресс-формах — сталь 1.2312',
+      },
+      {
+        images: [ 'img/portfolio-01.png', 'img/portfolio-02.png' ],
+        header: 'Пресс-форма для (?) из&nbsp;АБС и&nbsp;полиамида PA-10',
+        textTop: 'Состоит из&nbsp;2&nbsp;половин. Форма с&nbsp;2&nbsp;гидроцилиндрами и&nbsp;2&nbsp;шиберами для оформления скрытых полостей и&nbsp;отверстий в&nbsp;боковых стенках. Твердость 46-48&nbsp;HRC, рассчитана на&nbsp;500&nbsp;000 смыканий.',
+        options: [
+          { name: 'Цена', value: '670&nbsp;000&nbsp;руб.&nbsp;с&nbsp;НДС' },
+          { name: 'Срок изготовления', value: '32&nbsp;дня' },
+          { name: 'Габариты', value: '246&times;218&times;234&nbsp;мм' },
+          { name: 'Вес', value: '100&nbsp;кг' },
+        ],
+        textBottom: 'Материал формообразующих элементов на обеих пресс-формах — сталь 1.2312',
+      },
+      {
+        images: [ 'img/portfolio-01.png', 'img/portfolio-02.png' ],
+        header: 'Пресс-форма для (?) из&nbsp;АБС и&nbsp;полиамида PA-10',
+        textTop: 'Состоит из&nbsp;2&nbsp;половин. Форма с&nbsp;2&nbsp;гидроцилиндрами и&nbsp;2&nbsp;шиберами для оформления скрытых полостей и&nbsp;отверстий в&nbsp;боковых стенках. Твердость 46-48&nbsp;HRC, рассчитана на&nbsp;500&nbsp;000 смыканий.',
+        options: [
+          { name: 'Цена', value: '670&nbsp;000&nbsp;руб.&nbsp;с&nbsp;НДС' },
+          { name: 'Срок изготовления', value: '32&nbsp;дня' },
+          { name: 'Габариты', value: '246&times;218&times;234&nbsp;мм' },
+          { name: 'Вес', value: '100&nbsp;кг' },
+        ],
+        textBottom: 'Материал формообразующих элементов на обеих пресс-формах — сталь 1.2312',
+      },
+      {
+        images: [ 'img/portfolio-01.png', 'img/portfolio-02.png' ],
+        header: 'Пресс-форма для (?) из&nbsp;АБС и&nbsp;полиамида PA-10',
+        textTop: 'Состоит из&nbsp;2&nbsp;половин. Форма с&nbsp;2&nbsp;гидроцилиндрами и&nbsp;2&nbsp;шиберами для оформления скрытых полостей и&nbsp;отверстий в&nbsp;боковых стенках. Твердость 46-48&nbsp;HRC, рассчитана на&nbsp;500&nbsp;000 смыканий.',
+        options: [
+          { name: 'Цена', value: '670&nbsp;000&nbsp;руб.&nbsp;с&nbsp;НДС' },
+          { name: 'Срок изготовления', value: '32&nbsp;дня' },
+          { name: 'Габариты', value: '246&times;218&times;234&nbsp;мм' },
+          { name: 'Вес', value: '100&nbsp;кг' },
+        ],
+        textBottom: 'Материал формообразующих элементов на&nbsp;обеих пресс-формах&nbsp;&mdash; сталь 1.2312',
+      },
+    ]
+  }
+
+.portfolio#portfolio
+  .container
+    h2.portfolio__header !{portfolio.header}
+    .tabs
+      .tabs-controls
+        each control, index in portfolio.items
+          div.tabs__control
+            span !{index + 1}
+      each content in portfolio.items
+        .tabs__content
+          .portfolio__item
+            .portfolio__item-image-part.owl-carousel
+              each image in content.images
+                a.portfolio__item-link(href=image)
+                  img.portfolio__item-image(src=image, alt="")
+            .portfolio__item-text-part
+              p.portfolio__item-header !{content.header}
+              p.portfolio__item-text.portfolio__item-text_top !{content.textTop}
+              table.portfolio__item-table
+                each row in content.options
+                  tr
+                    td !{row.name}
+                    td !{row.value}
+              p.portfolio__item-text.portfolio__item-text_bottom !{content.textBottom}
+
+    

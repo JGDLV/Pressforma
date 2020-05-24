@@ -1,0 +1,19 @@
+-
+  var footer = {
+    header: 'Другие направления нашей работы:',
+    list: [
+      { href: '#', text: 'Изготовление изделий по&nbsp;чертежам заказчика на&nbsp;станках с&nbsp;ЧПУ' },
+      { href: '#', text: 'Собственное производство кулачков токарного патрона' },
+      { href: '#', text: 'Изготовление нестандартных метизов' },
+      { href: '#', text: 'Поставка оборудования для СОЖ и&nbsp;очистки станков' },
+    ]
+  }
+
+.footer-top
+  .container
+    .footer-top__inner
+      p.footer__text !{footer.header}
+      ul.footer-list
+        each item in footer.list
+          li.footer-list__item
+            a.footer-list__link(href=item.href) !{item.text}

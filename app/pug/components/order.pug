@@ -1,0 +1,24 @@
+-
+  var order = {
+    header: 'Закажите высокоточные литьевые <br>пресс-формы для пластмасс или резины',
+    textTop: 'Отправьте нам чертежи готового изделия&nbsp;&mdash; создадим проект с&nbsp;учетом современных стандартов и&nbsp;с&nbsp;использованием серийных комплектующих. Вы&nbsp;получите качественную ремонтопригодную пресс-форму за&nbsp;14&ndash;90 рабочих дней по&nbsp;минимальной цене.',
+    textBottom: 'Оставьте заявку, рассчитаем цену изготовления пресс-формы за&nbsp;1&ndash;3 дня',
+  }
+
+.order#order
+  .container
+    h2.order__header !{order.header}
+    .order__inner
+      .order__left
+        p.order__text.order__text_top !{order.textTop}
+        p.order__text.order__text_bottom !{order.textBottom}
+      .order__right
+        form.order-form
+          input.order-form__name(type='text' placeholder=intro.form.name)
+          input.order-form__phone(type='text' placeholder=intro.form.phone name='phone' required)
+          textarea.order-form__comment(placeholder=intro.form.comment)
+          label.order-form__file
+            input(type='file')
+            span !{intro.form.file}
+          button.order-form__submit(type='submit')
+            span !{intro.form.submit}

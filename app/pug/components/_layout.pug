@@ -1,0 +1,33 @@
+block variables
+  -
+    var title = 'title'
+    var description = 'description'
+
+mixin section(name, header, subheader, text)
+  div(class=name id=name)
+  .container
+    h2(class=name + '__header') !{header}
+    if subheader
+      p(class=name + '__subheader') !{subheader}
+    if text
+      p(class=name + '__text') !{text}
+
+doctype html
+head
+  meta(charset='utf-8')
+  title= title
+  meta(name='description' content=description)
+  meta(name='viewport' content='width=device-width, initial-scale=1')
+  link(rel='stylesheet' href='css/libs.min.css')
+  link(rel='stylesheet' href='css/style.css')
+body(class=index ? '' : 'inner')
+  .header
+    include header/header.pug
+  .content
+    block content
+  .footer
+    include footer/footer.pug
+  #top
+    i.fas.fa-arrow-up
+  script(src='js/libs.min.js')
+  script(src='js/scripts.js')
