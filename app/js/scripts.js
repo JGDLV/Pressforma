@@ -2,12 +2,15 @@ $(document).ready(function () {
 
   $('form').each(function () {
     const form = $(this);
-    const fileInput = $(this).find('input[type="file"]');
-    const fileSpan = $(this).find('input[type="file"] ~ span');
-    const fileText = 'Прикрепить файл';
+    const fileLabel = form.find('label[class*="file"]');
+    const fileInput = fileLabel.find('input[type="file"]');
+    const fileName = fileLabel.find('.name');
+    const fileDelete = fileLabel.next('.delete');
     const phone = $(this).find('input[name*="phone"]');
     const privacyLabel = $(this).find('label[class*="privacy"]');
     const privacyInput = privacyLabel.find('input');
+
+    // Для чекбоксов и радио
 
     privacyLabel.on('click', function () {
       if (privacyInput.attr('type') == 'checkbox') {
@@ -21,23 +24,42 @@ $(document).ready(function () {
       }
     });
 
+    // Для телефонов
+
     phone.each(function () {
       $(this).inputmask("+7 (999) 999-99-99");
     });
 
-    fileInput.on('change', function () {
+    // Для файла
+
+    function onFileDelete() {
+      fileInput.val('');
+      fileName.text(fileLabel.data('name'));
+      fileDelete.css('display', 'none');
+    }
+
+    function onFileChange() {
       const fileVal = $(this).val().replace(/.+[\\\/]/, '');
-      fileVal !== '' ? fileSpan.text(fileVal) : fileSpan.text(fileText);
-    });
+      if (fileVal !== '') {
+        fileName.text(fileVal);
+        fileDelete.css('display', 'block');
+      } else onFileDelete
+    }
+
+    fileName.text(fileLabel.data('name'));
+    fileDelete.css('display', 'none');
+
+    fileInput.on('change', onFileChange);
+    fileDelete.on('click', onFileDelete);
+
+    // По отправке формы
 
     form.on('submit', function () {
-      fileSpan.text(fileText);
       privacyLabel.removeClass('active');
     });
   });
 
   $(window).scroll(function () {
-    // $(this).scrollTop() > 600 ? $('#top').show(200) : $('#top').hide(200);
     $(this).scrollTop() > 600
       ? $('#top').addClass('active')
       : $('#top').removeClass('active');

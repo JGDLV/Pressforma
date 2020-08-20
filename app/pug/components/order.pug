@@ -17,8 +17,10 @@
           input.order-form__name(type='text' placeholder=intro.form.name)
           input.order-form__phone(type='text' placeholder=intro.form.phone name='phone' required)
           textarea.order-form__comment(placeholder=intro.form.comment)
-          label.order-form__file
-            input(type='file')
-            span !{intro.form.file}
+          .order-form__file-wrap
+            label.order-form__file(data-name=intro.form.file)
+              input(type='file')
+              span.name
+            span.delete &times;
           button.order-form__submit(type='submit')
             span !{intro.form.submit}

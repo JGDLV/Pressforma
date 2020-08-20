@@ -34,9 +34,11 @@
             <input class="intro-form__name" type="text" placeholder="Ваше имя">
             <input class="intro-form__phone" type="text" placeholder="Ваш телефон *" name="phone" required>
             <textarea class="intro-form__comment" placeholder="Пожелания к пресс-форме"></textarea>
-            <label class="intro-form__file">
-              <input type="file"><span>Добавить файл</span>
-            </label>
+            <div class="intro-form__file-wrap">
+              <label class="intro-form__file" data-name="Добавить файл">
+                <input type="file"><span class="name"></span>
+              </label><span class="delete">&times;</span>
+            </div>
             <button class="intro-form__submit" type="submit"><span>Отправить заявку</span></button>
           </div>
         </form>
@@ -471,9 +473,11 @@
               <input class="order-form__name" type="text" placeholder="Ваше имя">
               <input class="order-form__phone" type="text" placeholder="Ваш телефон *" name="phone" required>
               <textarea class="order-form__comment" placeholder="Пожелания к пресс-форме"></textarea>
-              <label class="order-form__file">
-                <input type="file"><span>Добавить файл</span>
-              </label>
+              <div class="order-form__file-wrap">
+                <label class="order-form__file" data-name="Добавить файл">
+                  <input type="file"><span class="name"></span>
+                </label><span class="delete">&times;</span>
+              </div>
               <button class="order-form__submit" type="submit"><span>Отправить заявку</span></button>
             </form>
           </div>
